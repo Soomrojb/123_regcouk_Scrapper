@@ -18,9 +18,10 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
        'Accept-Encoding': 'none',
        'Accept-Language': 'en-US,en;q=0.8',
-       'Connection': 'keep-alive'}
+       'Connection': 'keep-alive',
+       'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/'}
 
-urllib2.urlopen(NewURL, headers=hdr, data=str(qargs))
+urllib2.urlopen(NewURL, str(hdr))
 print "website loaded successfully"
 
 # root = lxml.html.fromstring(html)
