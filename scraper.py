@@ -16,9 +16,10 @@ qargs = {'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/',
        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}
 
 response = requests.get(NewURL, str(qargs))
+root = lxml.html.fromstring(response.content)
 
 print "website loaded successfully"
-print response.content
+print str(root)
 
 #html = requests.get(NewURL, str(qargs))
 #root = lxml.html.fromstring(str(html.content))
