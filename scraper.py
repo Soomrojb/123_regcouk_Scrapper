@@ -15,11 +15,14 @@ NewURL = MySite + str(today) + "/"
 qargs = {'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/',
        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}
 
-html = requests.get(NewURL, str(qargs))
-root = lxml.html.fromstring(str(html.content))
-print "website loaded successfully"
-print str(root)
+response = requests.get(NewURL, str(qargs))
 
+print "website loaded successfully"
+print response.content
+
+#html = requests.get(NewURL, str(qargs))
+#root = lxml.html.fromstring(str(html.content))
+#print str(root)
 # root = lxml.html.fromstring(html)
 # root.cssselect("div[align='left']")
 
