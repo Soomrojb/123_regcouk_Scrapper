@@ -37,7 +37,7 @@ root = lxml.html.fromstring(html)
 # root = lxml.html.fromstring(html)
 # root.cssselect("div[align='left']")
 
-for loop in range(1:200):
+for loop in range(1,200):
   elem = root.cssselect("#tab-content-new-domains-tab > div:nth-child(3) > table > tbody > tr:nth-child(6) > td > a")
   print elem
 
