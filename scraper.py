@@ -26,7 +26,7 @@
 import scraperwiki
 import lxml.html
 import datetime
-import urllib.request
+#import urllib.request
 import urllib2
 
 today = datetime.date.today()
