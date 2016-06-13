@@ -12,7 +12,7 @@ NewURL = MySite + str(today) + "/"
 #html = scraperwiki.scrape(NewURL)
 #root = lxml.html.fromstring(html)
 
-qargs = {'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/', 'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36')
+qargs = {'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/', 'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'}
 
 urllib2.urlopen(NewURL, qargs)
 print "website loaded successfully"
