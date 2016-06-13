@@ -18,7 +18,7 @@ qargs = {'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/',
 html = requests.get(NewURL, str(qargs))
 root = lxml.html.fromstring(html)
 print "website loaded successfully"
-print root
+print str(root)
 
 # root = lxml.html.fromstring(html)
 # root.cssselect("div[align='left']")
