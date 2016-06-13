@@ -21,7 +21,7 @@ root = lxml.html.fromstring(response.content)
 domains = root.xpath('//*[@id="tab-content-new-domains-tab"]/div[3]/table/tbody/tr[2]/td/a')
 
 print "website loaded successfully"
-print domains.get(text)
+print domains
 
 #html = requests.get(NewURL, str(qargs))
 #root = lxml.html.fromstring(str(html.content))
