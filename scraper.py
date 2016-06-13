@@ -3,6 +3,7 @@ import scraperwiki
 import lxml.html
 import datetime
 import urllib2
+import requests
 
 today = datetime.date.today()
 MySite = 'http://www.dailychanges.com/123-reg.co.uk/';
@@ -21,7 +22,8 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Connection': 'keep-alive',
        'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/'}
 
-urllib2.urlopen(NewURL, str(qargs))
+requests.get(NewURL, str(qargs))
+#urllib2.urlopen(NewURL, str(qargs))
 print "website loaded successfully"
 
 # root = lxml.html.fromstring(html)
