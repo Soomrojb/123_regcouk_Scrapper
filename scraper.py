@@ -28,8 +28,9 @@ import lxml.html
 import datetime
 
 today = datetime.date.today()
-print today
+MySite = 'http://www.dailychanges.com/123-reg.co.uk/';
+NewURL = MySite + str(today) + "/"
+print NewURL
 
 #print datetime.date.today().strftime("%B %d, %Y")
 
-#MySite = 'http://www.dailychanges.com/123-reg.co.uk/';
