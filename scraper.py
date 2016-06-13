@@ -27,4 +27,6 @@ import scraperwiki
 import lxml.html
 import datetime
 
+print datetime.date.today().strftime("%B %d, %Y")
+
 MySite = 'http://www.dailychanges.com/123-reg.co.uk/';
