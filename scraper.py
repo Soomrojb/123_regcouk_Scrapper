@@ -4,6 +4,7 @@ import lxml.html
 import datetime
 import urllib2
 import requests
+import urllib2
 
 today = datetime.date.today()
 MySite = 'http://www.dailychanges.com/123-reg.co.uk/';
@@ -15,7 +16,7 @@ NewURL = MySite + str(today) + "/"
 qargs = {'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/',
        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}
 
-response = requests.get(NewURL, str(qargs))
+response = urllib2.urlopen(NewURL, str(qargs))
 
 #root = lxml.html.fromstring(response.content)
 
@@ -23,7 +24,7 @@ response = requests.get(NewURL, str(qargs))
 
 print "website loaded successfully"
 
-print response
+print response.test
 #print domains
 
 #html = requests.get(NewURL, str(qargs))
