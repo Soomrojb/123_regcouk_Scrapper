@@ -4,7 +4,6 @@ import lxml.html
 import datetime
 import urllib2
 import requests
-import BeautifulSoup
 
 today = datetime.date.today()
 MySite = 'http://www.dailychanges.com/123-reg.co.uk/';
@@ -17,14 +16,14 @@ qargs = {'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/',
        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}
 
 response = requests.get(NewURL, str(qargs))
+
 #root = lxml.html.fromstring(response.content)
 
 #domains = root.xpath('//*[@id="tab-content-new-domains-tab"]/div[3]/table/tbody/tr[2]/td/a')
 
 print "website loaded successfully"
 
-Soup = beautifulsoup(response)
-print Soup
+print response
 #print domains
 
 #html = requests.get(NewURL, str(qargs))
