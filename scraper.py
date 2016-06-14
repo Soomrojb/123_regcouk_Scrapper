@@ -4,7 +4,7 @@ import lxml.html
 import datetime
 import urllib2
 import requests
-import beautifulsoup
+import BeautifulSoup
 
 today = datetime.date.today()
 MySite = 'http://www.dailychanges.com/123-reg.co.uk/';
