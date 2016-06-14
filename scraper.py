@@ -1,41 +1,16 @@
-
-import scraperwiki
-import lxml.html
-import datetime
-import urllib2
 import requests
-import urllib2
 
-today = datetime.date.today()
-MySite = 'http://www.dailychanges.com/123-reg.co.uk/';
-NewURL = MySite + str(today) + "/"
+site = 'http://www.dailychanges.com/123-reg.co.uk/'
+headers = {'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+           'Accept-Encoding':'gzip, deflate, sdch',
+           'Accept-Language':'en-US,en;q=0.8',
+           'Cache-Control':'max-age=0',
+           'Connection':'keep-alive',
+           'Host':'www.dailychanges.com',
+           'If-Modified-Since':'Mon, 13 Jun 2016 20:38:04 GMT',
+           'Upgrade-Insecure-Requests':'1',
+           'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'}
 
-#html = scraperwiki.scrape(NewURL)
-#root = lxml.html.fromstring(html)
 
-qargs = {'Referer':'http://www.dailychanges.com/123-reg.co.uk/2016-06-11/',
-       'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}
-
-response = urllib2.urlopen(NewURL, str(qargs))
-
-#root = lxml.html.fromstring(response.content)
-
-#domains = root.xpath('//*[@id="tab-content-new-domains-tab"]/div[3]/table/tbody/tr[2]/td/a')
-
-print "website loaded successfully"
-
-print response.test
-#print domains
-
-#html = requests.get(NewURL, str(qargs))
-#root = lxml.html.fromstring(str(html.content))
-#print str(root)
-# root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']")
-
-#for loop in range(1,200):
-#  elem = root.cssselect("#tab-content-new-domains-tab > div:nth-child(3) > table > tbody > tr:nth-child(6) > td > a")
-#  print elem
-
-#print datetime.date.today().strftime("%B %d, %Y")
-
+response = requests.get(site, headers=headers)
+print response.content
