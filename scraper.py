@@ -3,6 +3,7 @@ import scraperwiki
 import lxml.html
 #from BeautifulSoup import BeautifulSoup
 import beautifulsoup
+import re
 from lxml import etree
 
 site = 'http://www.dailychanges.com/123-reg.co.uk/'
