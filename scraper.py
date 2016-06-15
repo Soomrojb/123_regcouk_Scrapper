@@ -18,7 +18,7 @@ headers = {'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image
            'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'}
 
 today = datetime.date.today()
-response = requests.get(site + site(today), headers=headers)
+response = requests.get('%s/%s/' %(site,today), headers=headers)
 soup = BeautifulSoup(response.content)
 
 for AllDomainURL in soup.findAll('a', attrs={'title':re.compile('View Whois record for')}):
