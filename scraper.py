@@ -1,7 +1,8 @@
 import requests
 import scraperwiki
 import lxml.html
-from BeautifulSoup import BeautifulSoup
+#from BeautifulSoup import BeautifulSoup
+import beautifulsoup
 from lxml import etree
 
 site = 'http://www.dailychanges.com/123-reg.co.uk/'
@@ -17,7 +18,7 @@ headers = {'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image
 
 
 response = requests.get(site, headers=headers)
-soup = BeautifulSoup(response.content)
+soup = beautifulsoup(response.content)
 
 # print soup.find('a')
 print soup
