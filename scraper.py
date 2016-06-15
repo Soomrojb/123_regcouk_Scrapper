@@ -23,4 +23,6 @@ for AllDomainURL in soup.findAll('a', attrs={'title':re.compile('View Whois reco
     print AllDomainURL.text
     DomainHref = AllDomainURL.get('href')
     print DomainHref
-    scraperwiki.sqlite.save(unique_keys=['data'], data={"name": str(AllDomainURL.text), "href": str(DomainHref)})
+    #scraperwiki.sqlite.save(unique_keys=['data'], data={"name": str(AllDomainURL.text), "href": str(DomainHref)})
+    scraperwiki.sql.select("* from data where 'name' like '%5%")
+    break
