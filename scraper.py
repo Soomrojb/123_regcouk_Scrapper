@@ -25,9 +25,5 @@ for AllDomainURL in soup.findAll('a', attrs={'title':re.compile('View Whois reco
     print AllDomainURL.text
     DomainHref = AllDomainURL.get('href')
     print DomainHref
-    response1 = requests.get(DomainHref, headers=headers)
-    soup1 = BeautifulSoup(response.content)
-    print soup1
-    break
 
 
