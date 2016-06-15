@@ -20,9 +20,7 @@ response = requests.get(site, headers=headers)
 soup = BeautifulSoup(response.content)
 
 for AllDomainURL in soup.findAll('a', attrs={'title':re.compile('View Whois record for')}):
-    print AllDomainURL.text
+    DomainTitle = AllDomainURL.text
     DomainHref = AllDomainURL.get('href')
     print DomainHref
-    scraperwiki.sqlite.save(unique_keys=['domaindetails'], data={"name": str(AllDomainURL.text), "href": str(DomainHref)})
-    #print scraperwiki.sql.select("* from data where 'name' = '5gmobilewifi.com'")
-    #break
+    scraperwiki.sqlite.save(unique_keys=['name'], data={"name": DomainTitle, "occupation": DomainHref})
