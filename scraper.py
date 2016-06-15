@@ -22,4 +22,6 @@ soup = beautifulsoup(response.content)
 
 for AllDomainURL in soup.findAll('a', attrs={'title':re.compile('View Whois record for')}):
     print AllDomainURL.text
+    DomainHref = AllDomainURL.get('href')
+    print DomainHref
 
