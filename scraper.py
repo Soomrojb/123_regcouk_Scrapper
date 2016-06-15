@@ -1,8 +1,8 @@
 import requests
 #import scraperwiki
 #import lxml.html
-#from BeautifulSoup import BeautifulSoup
-import BeautifulSoup
+from BeautifulSoup import BeautifulSoup
+#import BeautifulSoup
 import re
 #from lxml import etree
 
