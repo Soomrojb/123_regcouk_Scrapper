@@ -2,7 +2,7 @@ import requests
 import scraperwiki
 import lxml.html
 #from BeautifulSoup import BeautifulSoup
-import beautifulsoup
+import BeautifulSoup
 import re
 from lxml import etree
 
@@ -19,7 +19,7 @@ headers = {'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image
 
 
 response = requests.get(site, headers=headers)
-soup = beautifulsoup(response.content)
+soup = BeautifulSoup(response.content)
 
 for AllDomainURL in soup.findAll('a', attrs={'title':re.compile('View Whois record for')}):
     print AllDomainURL.text
