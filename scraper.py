@@ -1,5 +1,6 @@
 # Acquire daily added domains
 
+import scraperwiki
 import requests
 from BeautifulSoup import BeautifulSoup
 import re
@@ -23,3 +24,4 @@ for AllDomainURL in soup.findAll('a', attrs={'title':re.compile('View Whois reco
     print AllDomainURL.text
     DomainHref = AllDomainURL.get('href')
     print DomainHref
+    scraperwiki.sqlite.save(unique_keys=['domainname'], data={"name": str(AllDomainURL.text), "href": str(DomainHref)})
