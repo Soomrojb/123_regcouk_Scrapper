@@ -23,4 +23,4 @@ for AllDomainURL in soup.findAll('a', attrs={'title':re.compile('View Whois reco
     DomainTitle = AllDomainURL.text
     DomainHref = AllDomainURL.get('href')
     print DomainHref
-    scraperwiki.sqlite.save(unique_keys=['name'], data={"name": DomainTitle, "occupation": DomainHref})
+    scraperwiki.sqlite.save(unique_keys=['name'], data={"name": DomainTitle, "href": DomainHref})
