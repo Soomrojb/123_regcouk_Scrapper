@@ -1,10 +1,10 @@
 import requests
-import scraperwiki
-import lxml.html
+#import scraperwiki
+#import lxml.html
 #from BeautifulSoup import BeautifulSoup
 import BeautifulSoup
 import re
-from lxml import etree
+#from lxml import etree
 
 site = 'http://www.dailychanges.com/123-reg.co.uk/'
 headers = {'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
